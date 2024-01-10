@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import FooterLogo from '../../assets/logo_big.png';
-import Instagram from '../../Assets/instagram_icon.png'
+import Instagram from '../../assets/instagram_icon.png'
 import Pintester from '../../Assets/pintester_icon.png'
 import Whatsapp from '../../Assets/whatsapp_icon.png'
 
