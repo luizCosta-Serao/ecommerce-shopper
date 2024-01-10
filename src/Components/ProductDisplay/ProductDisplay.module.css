@@ -1,0 +1,117 @@
+.productDisplay {
+  max-width: 1250px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 0px auto 0px auto;
+  padding: 0px .2rem 0rem .2rem;
+}
+
+.displayLeft {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+  margin-bottom: 6rem;
+}
+
+.imgList {
+  display: flex;
+  gap: 1rem;
+  grid-row: 2 / 3;
+}
+
+.imgList img {
+  height: 140px;
+}
+
+.img {
+  width: 530px;
+}
+
+.mainImg {
+  height: 530px;
+}
+
+.displayRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.displayRight h1 {
+  color: #3d3d3d;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.star {
+  display: flex;
+  gap: .2rem;
+  align-items: center;
+  margin-top: .8rem;
+  color: #1c1c1c;
+  font-size: 1rem;
+}
+
+.star img {
+  width: 15px;
+  height: 15px;
+}
+
+.prices {
+  display: flex;
+  margin: 1.5rem 0px;
+  gap: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.priceOld {
+  color: #818181;
+  text-decoration: line-through;
+}
+
+.priceNew {
+  color: #ff4141;
+}
+
+.size h1 {
+  margin-top: 2rem;
+  color: #656565;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.sizes {
+  display: flex;
+  margin: 2rem 0px;
+  gap: 1.125rem;
+}
+
+.sizes div {
+  padding: 1.1rem 1.5rem;
+  background-color: #fbfbfb;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.buy {
+  padding: 1.125rem 2.5rem;
+  width: 200px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ff4141;
+  margin-bottom: 1.2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.category {
+  margin-bottom: .5rem;
+}
+
+.category span {
+  font-weight: 600;
+}
