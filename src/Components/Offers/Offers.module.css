@@ -1,5 +1,6 @@
 .offers {
-  max-width: 100%;
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   margin: 5rem auto 0 auto;
   padding: 26px 2rem;
@@ -10,6 +11,7 @@
 .offersLeft {
   flex: 1;
   display: flex;
+  padding-left: 3rem;
   flex-direction: column;
   justify-content: center;
 }
@@ -56,6 +58,8 @@
   .offersLeft {
     text-align: center;
     margin: 0 auto;
+    padding-left: 0rem;
+    padding-right: 3.5rem;
   }
 
   .offersLeft button {
