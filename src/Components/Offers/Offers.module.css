@@ -1,9 +1,8 @@
 .offers {
-  width: 65%;
-  height: 60vh;
+  max-width: 100%;
   display: flex;
   margin: 5rem auto 0 auto;
-  padding: 26px 140px;
+  padding: 26px 2rem;
   margin-bottom: 150px;
   background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
 }
@@ -51,4 +50,23 @@
 
 .offersRight img {
   max-width: 330px;
+}
+
+@media (max-width: 876px) {
+  .offersLeft {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .offersLeft button {
+    margin: 2rem auto;
+  }
+
+  .offersLeft h1 {
+    font-size: 3.5rem;
+  }
+
+  .offersRight {
+    display: none;
+  }
 }

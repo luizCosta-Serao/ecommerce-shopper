@@ -10,7 +10,7 @@ const Shop = () => {
     <section>
       <Hero />
       <Popular />
-      <Offers />
+      <Offers /> 
       <NewCollections />
       <NewsLetter />
     </section>

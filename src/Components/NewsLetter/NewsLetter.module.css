@@ -1,12 +1,11 @@
 .newsLetter {
-  width: 65%;
-  height: 40vh;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
-  padding: 0px 140px;
+  padding: 5rem 2rem;
   margin-bottom: 150px;
   background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
   gap: 2rem;
@@ -16,6 +15,7 @@
   color: #454545;
   font-size: 3.5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .newsLetter p {
@@ -52,4 +52,29 @@
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
+}
+
+@media (max-width: 876px) {
+  
+  .newsLetter h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .newsLetter div {
+    max-width: 730px;
+    width: 100%;
+  }
+
+  .newsLetter input {
+    max-width: 500px;
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .newsLetter button {
+    max-width: 210px;
+    width: 100%;
+  }
+
 }

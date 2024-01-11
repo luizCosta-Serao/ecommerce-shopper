@@ -23,12 +23,28 @@
 .collections {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
   margin-top: 3rem;
-  gap: 2rem;
   max-width: 1200px;
   width: 100%;
 }
 
 .collections section {
   max-width: 280px;
+}
+
+@media (max-width: 1250px) {
+  .newCollections h1 {
+    font-size: 2rem;
+  }
+  
+  .collections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .collections section {
+    max-width: 200px;
+  }
 }
