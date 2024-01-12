@@ -21,14 +21,14 @@ const CartItems = () => {
     setTotal(getTotalAmount())
   }, [AllProduct, cartItems])
   
-  return (
+  return ( 
     <section className={styles.cartItems}>
       <div className={styles.formatMain}>
         <p>Products</p>
-        <p>Title</p>
+        <p className={styles.title}>Title</p>
         <p>Price</p>
         <p>Quantity</p>
-        <p>Total</p>
+        <p className={styles.totalPrice}>Total</p>
         <p>Remove</p>
       </div>
       <hr />
@@ -48,7 +48,7 @@ const CartItems = () => {
               <button className={styles.quantity}>
                 {cartItems[product.id]}
               </button>
-              <p>${product.new_price * cartItems[product.id]}</p>
+              <p className={styles.totalPrice}>${product.new_price * cartItems[product.id]}</p>
               <img
                 onClick={() => {removeFromCart(product.id)}}
                 src={RemoveIcon}
