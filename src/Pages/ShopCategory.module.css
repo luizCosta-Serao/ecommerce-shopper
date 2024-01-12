@@ -1,13 +1,14 @@
 .banner {
   display: block;
-  margin: 2rem auto;
+  margin: .2rem auto;
   max-width: 1200px;
-
 }
 
 .indexSort {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  margin: 0px 170px;
+  padding: 1rem .5rem;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,14 +31,14 @@
 }
 
 .products {
-  margin: 1.125rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   max-width: 1200px;
   margin: 2rem auto 0px auto;
   width: 100%;
+  gap: 1rem;
 }
 
 .products section {
@@ -57,6 +58,4 @@
   color: #787878;
   font-size: 1.125rem;
   font-weight: 500;
-  
-
 }
