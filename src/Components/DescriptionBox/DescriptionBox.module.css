@@ -1,6 +1,7 @@
 .descriptionBox {
   margin: 0 auto 6rem;
   max-width: 1200px;
+  padding: 0 1rem;
 }
 
 .navigator {
