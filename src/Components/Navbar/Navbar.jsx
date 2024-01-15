@@ -8,6 +8,8 @@ import { ShopContext } from '../../Context/ShopContext';
 const Navbar = () => {
   const [menu, setMenu] = React.useState('shop')
   const [cartTotal, setCartTotal] = React.useState(1)
+  const [menuMobile, setMenuMobile] = React.useState(false)
+
   const { cartItems } = useContext(ShopContext)
 
   React.useEffect(() => {
@@ -23,14 +25,27 @@ const Navbar = () => {
     setCartTotal(getTotalCartItems())
   }, [cartItems])
 
+  React.useEffect(() => {
+    const media = window.matchMedia('(max-width: 876px');
+    function handleResize() {
+      if(media.matches) {
+        setMenuMobile(true)
+      } else {
+        setMenuMobile(false)
+      }
+    }
+    window.addEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section className={styles.navbar}>
       <div className={styles.navLogo}>
         <img src={Logo} alt="Shopper" />
         <p>shopper</p>
       </div>
+      <button className={styles.btnMenuMobile} onClick={() => setMenuMobile(!menuMobile)}></button>
       <nav>
-        <ul className={styles.navMenu}>
+        <ul className={menuMobile ? styles.navMenuMobile : styles.navMenu}>
           <li onClick={() => setMenu('shop')}>
             <Link to='/'>Shop</Link>
             {menu ===  'shop' ? <hr /> : <></>}
