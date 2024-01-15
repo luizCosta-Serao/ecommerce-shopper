@@ -197,3 +197,14 @@
     transform: translate3d(0, 0px, 0);
   }
 }
+
+@media (max-width: 470px) {
+  .navLogo img {
+    width: 40px;
+  }
+
+  .navLogo p {
+    font-size: 1rem;
+    margin-top: .6rem;
+  }
+}
