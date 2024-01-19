@@ -5,7 +5,7 @@
   padding: 3rem 0rem;
   max-width: 1200px;
   margin: .1rem auto 6rem auto;
-  border-radius: 4rem;
+  width: 100%;
 }
 
 .heroLeft {
@@ -74,21 +74,24 @@
 
  .heroLeft {
   text-align: center;
-  padding-left: 1rem;
   margin: 1rem auto 4rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
  }
 
- .heroLeft h2 {
+ .heroLeft h1 {
   margin-bottom: 2rem;
  }
 
  .heroLeft p {
-  font-size: 3.5rem;
+  font-size: 1.6rem;
+  max-width: 600px;
  }
 
  .latestBtn {
-  width: 200px;
-  font-size: 1rem;
+  width: 250px;
+  font-size: 1.3rem;
+  margin: 3rem auto 0 auto;
 }
 
 .latestBtn img {
@@ -98,4 +101,14 @@
  .heroRight {
   display: none;
  }
+}
+
+@media (max-width: 500px) {
+  .heroLeft h1 {
+    font-size: 3rem;
+  }
+
+  .heroLeft p {
+    font-size: 1.3rem;
+  }
 }
