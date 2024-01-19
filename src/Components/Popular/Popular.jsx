@@ -1,23 +1,35 @@
 import React from 'react'
 import styles from './Popular.module.css'
-import dataProduct from '../../assets/data'
 import Item from '../Item/Item'
 
 const Popular = () => {
+  const [products, setProducts] = React.useState(null)
+
+  React.useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products?limit=4')
+        const json = await response.json()
+        setProducts(json)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchProducts()
+  }, [])
 
   return (
     <section className={styles.popular}>
-      <h1>Popular in Women</h1>
+      <h1>Popular at the moment</h1>
       <hr />
       <div className={styles.popularItem}>
-        {dataProduct.map((item, index) => (
+        {products && products.map((product, index) => (
           <Item 
             key={index}
-            id={item.id}
-            name={item.name}
-            img={item.image}
-            newPrice={item.new_price}
-            oldPrice={item.old_price}
+            id={product.id}
+            name={product.title.slice(0, 20)}
+            img={product.image}
+            newPrice={product.price.toFixed(2)}
           />
         ))}
       </div>

@@ -23,15 +23,11 @@
 .popularItem {
   margin: 3rem auto 0px auto;
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 100%;
   max-width: 1200px;
-}
-
-.popularItem section {
-  max-width: 280px;
 }
 
 @media (max-width: 876px) {
@@ -40,6 +36,6 @@
   }
  
   .popularItem {
-  flex-wrap: wrap;
- } 
+    flex-wrap: wrap;
+  } 
 }

@@ -6,17 +6,15 @@ const Item = ({ img, id, name, newPrice, oldPrice }) => {
   return (
     <section id={id} className={styles.item}>
       <Link to={`/product/${id}`}>
-        <img onClick={window.scrollTo(0, 0)} src={img} alt="" />
+        <img className={styles.itemImg} onClick={window.scrollTo(0, 0)} src={img} alt="" />
       </Link>
-      <p>{name}</p>
-      <div className={styles.itemPrices}>
-        <div className={styles.itemPricesNew}>
+      <p className={styles.itemName}>{name}</p>
+      <span className={styles.itemPrice}>
           ${newPrice}
-        </div>
-        <div className={styles.itemPricesOld}>
-          ${oldPrice}
-        </div>
-      </div>
+      </span>
+      <p className={styles.itemDescription}>
+        {oldPrice}
+      </p>
     </section>
   )
 }
