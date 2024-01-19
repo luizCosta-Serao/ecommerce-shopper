@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import styles from './Navbar.module.css';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo.svg';
 import CartIcon from '../../assets/cart_icon.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 
 const Navbar = () => {
   const [menu, setMenu] = React.useState('shop')
   const [cartTotal, setCartTotal] = React.useState(1)
   const [menuMobile, setMenuMobile] = React.useState(false)
+  const { pathname } = useLocation()
 
   const { cartItems } = useContext(ShopContext)
 
@@ -35,49 +36,62 @@ const Navbar = () => {
       }
     }
     window.addEventListener('resize', handleResize)
-  }, [])
+  }, [])  
 
   return (
-    <section className={styles.navbar}>
+    <div className={styles.navbar}>
+
       <div className={styles.navLogo}>
-        <img src={Logo} alt="Shopper" />
-        <p>shopper</p>
-      </div>
-      <button className={styles.btnMenuMobile} onClick={() => setMenuMobile(!menuMobile)}></button>
-      <nav>
-        <ul className={menuMobile ? styles.navMenuMobile : styles.navMenu}>
-          <li onClick={() => setMenu('shop')}>
-            <Link to='/'>Shop</Link>
-            {menu ===  'shop' ? <hr /> : <></>}
-          </li>
-          <li onClick={() => setMenu('mens')}>
-            <Link to='mens'>Men</Link>
-            {menu ===  'mens' ? <hr /> : <></>}
-          </li>
-          <li onClick={() => setMenu('womens')}>
-            <Link to='womens'>Women</Link>
-            {menu ===  'womens' ? <hr /> : <></>}
-          </li>
-          <li onClick={() => setMenu('kids')}>
-            <Link to='kids'>Kids</Link>
-            {menu ===  'kids' ? <hr /> : <></>}
-          </li>
-        </ul>
-      </nav>
-      <div className={styles.loginCart}>
-        <Link to='login'>
-          <button>Login</button>
+        <Link to='/'>
+          <img src={Logo} alt="Shopper" />
         </Link>
-        <Link to='cart'>
-          <img
-            className={styles.cartImg}
-            src={CartIcon}
-            alt="Cart"
-          />
-        </Link>
-        <div className={styles.cartCount}>{cartTotal}</div>
       </div>
-    </section>
+      
+      <div className={styles.actions}>
+      
+        <div className={styles.actionsMenu}>
+          <button className={styles.btnMenuMobile} onClick={() => setMenuMobile(!menuMobile)}></button>
+          <nav>
+            <ul className={menuMobile ? styles.navMenuMobile : styles.navMenu}>
+              <li onClick={() => setMenu('shop')}>
+                <Link to='/'>Shop</Link>
+                {pathname ===  '/' ? <hr /> : <></>}
+              </li>
+              <li onClick={() => setMenu('mens')}>
+                <Link to='mens'>Men</Link>
+                {pathname ===  '/mens' ? <hr /> : <></>}
+              </li>
+              <li onClick={() => setMenu('womens')}>
+                <Link to='womens'>Women</Link>
+                {pathname ===  '/womens' ? <hr /> : <></>}
+              </li>
+              <li onClick={() => setMenu('kids')}>
+                <Link to='kids'>Kids</Link>
+                {pathname ===  '/kids' ? <hr /> : <></>}
+              </li>
+            </ul>
+          </nav>
+        </div>
+      
+        <div className={styles.actionsSignCart}>
+          <div className={styles.loginCart}>
+            <Link to='login'>
+              <button>Login</button>
+            </Link>
+            <Link to='cart'>
+              <img
+                className={styles.cartImg}
+                src={CartIcon}
+                alt="Cart"
+              />
+            </Link>
+            <span className={styles.cartCount}>{cartTotal}</span>
+          </div>
+        </div>
+      
+      </div>
+    
+    </div>
   )
 }
 
