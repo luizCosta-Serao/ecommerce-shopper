@@ -7,8 +7,7 @@ const Offers = () => {
     <section className={styles.offers}>
       <div className={styles.offersLeft}>
         <h1>Exclusive</h1>
-        <h1>Offers For You</h1>
-        <p>Only On Best Sellers Products</p>
+        <p>Lustrous yet understated. The new evening wear collection exclusively offered at the reopened Giorgio Armani boutique in Los Angeles.</p>
         <button>Check Now</button>
       </div>
       <div className={styles.offersRight}>
