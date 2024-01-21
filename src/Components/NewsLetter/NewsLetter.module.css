@@ -7,23 +7,23 @@
   margin: auto;
   padding: 5rem 2rem;
   margin-bottom: 150px;
-  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+  background-color: #333;
   gap: 2rem;
 }
 
 .newsLetter h1 {
-  color: #454545;
+  color: #fff;
   font-size: 3.5rem;
   font-weight: 600;
   text-align: center;
 }
 
 .newsLetter p {
-  color: #454545;
+  color: #fff;
   font-size: 1.125rem;
 }
 
-.newsLetter div {
+.newsLetter form {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +39,7 @@
   margin-left: 2rem;
   border: none;
   outline: none;
-  color: #616161;
+  color: #333;
   font-family: 'Poppins';
   font-size: 1rem;
 }
@@ -48,7 +48,8 @@
   width: 210px;
   height: 70px;
   border-radius: 80px;
-  background-color: #000;
+  background-color: #333;
+  border: none;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
@@ -65,7 +66,7 @@
     text-align: center;
   }
 
-  .newsLetter div {
+  .newsLetter form {
     max-width: 730px;
     width: 100%;
   }
