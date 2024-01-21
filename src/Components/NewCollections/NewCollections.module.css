@@ -29,10 +29,6 @@
   width: 100%;
 }
 
-.collections section {
-  max-width: 280px;
-}
-
 @media (max-width: 1250px) {
   .newCollections h1 {
     font-size: 2rem;
