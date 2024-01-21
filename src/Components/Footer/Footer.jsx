@@ -1,23 +1,23 @@
 import React from 'react'
 import styles from './Footer.module.css'
-import FooterLogo from '../../assets/logo_big.png';
+import FooterLogo from '../../assets/logo.svg';
 import Instagram from '../../assets/instagram_icon.png'
 import Pintester from '../../assets/pintester_icon.png'
 import Whatsapp from '../../assets/whatsapp_icon.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLogo}>
         <img src={FooterLogo} alt="" />
-        <p>Shopper</p>
       </div>
       <ul className={styles.footerLinks}>
-        <li>Company</li>
-        <li>Products</li>
-        <li>Offices</li>
-        <li>About</li>
-        <li>Contact</li>
+        <Link to=''><li>Company</li></Link>
+        <Link to=''><li>Products</li></Link>
+        <Link to=''><li>Offices</li></Link>
+        <Link to=''><li>About</li></Link>
+        <Link to=''><li>Contact</li></Link>
       </ul>
       <div className={styles.footerSocialIcon}>
         <div className={styles.footerIconsContainer}>
