@@ -1,33 +1,49 @@
-.banner {
-  display: block;
-  margin: .2rem auto;
-  max-width: 1200px;
-}
-
-.indexSort {
-  max-width: 1200px;
-  margin: 0 auto;
+.bannerContainer {
   display: flex;
-  padding: 1rem .5rem;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  margin: .05rem auto 5rem auto;
+  padding: 2rem 0;
+  max-width: 1200px;
+  height: 400px;
+  background-color: #333;
 }
 
-.indexSort p span {
+.bannerContent h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+
+.bannerContent p {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.bannerContainer img {
+  max-width: 300px;
+  max-height: 350px;
+  padding: 1rem;
+  border-radius: 2rem 4rem;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.category {
+  color: #333;
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
   font-weight: 600;
 }
 
-.sort {
-  padding: .687rem 1.125rem;
-  border-radius: 40px;
-  border: 1px solid #888;
-  max-width: 120px;
-  font-size: .8rem;
-}
-
-.sort img {
-  max-width: 15px;
-  margin: 0 auto;
+.categoryStyle {
+  width: 200px;
+  height: 6px;
+  border-radius: 10px;
+  background: #333;
+  margin-bottom: 6rem;
 }
 
 .products {
@@ -36,26 +52,12 @@
   justify-content: space-around;
   align-items: center;
   max-width: 1200px;
-  margin: 2rem auto 0px auto;
+  margin: 2rem auto 6rem auto;
   width: 100%;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .products section {
   max-width: 280px;
   margin-bottom: 1.5rem;
-}
-
-.loadmore {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto 100px auto;
-  width: 233px;
-  height: 69px;
-  border-radius: 75px;
-  background-color: #ededed;
-  color: #787878;
-  font-size: 1.125rem;
-  font-weight: 500;
 }

@@ -5,33 +5,43 @@ import DropdownIcon from '../assets/dropdown_icon.png'
 import Item from '../Components/Item/Item'
 
 const ShopCategory = ({ banner, category }) => {
-  const { AllProduct } = useContext(ShopContext)
+  const [products, setProducts] = React.useState(null)
+
+  React.useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products')
+        const json = await response.json()
+        setProducts(json)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchProducts()
+  }, [])
+'s'.startsWith
 
   return (
     <section className={styles.ShopCategory}>
-      <img className={styles.banner} src={banner} alt="" />
-      <div className={styles.indexSort}>
-        <p>
-          <span>Showing 1-12</span> out of 36 products
-        </p>
-        <div className={styles.sort}>
-          Sort by <img src={DropdownIcon} alt="" />
+      <div className={styles.bannerContainer}>
+        <div className={styles.bannerContent}>
+          <h1>Flat 50% OFF</h1>
+          <p>12 hours 20 mins</p>
         </div>
+        <img className={styles.banner} src={banner} alt="" />
       </div>
+      <h1 className={styles.category}>{category}</h1>
+      <hr className={styles.categoryStyle} />
       <div className={styles.products}>
-        {AllProduct.filter((product) => category === product.category).map((product, index) => (
+        {products && products.filter((product) => product.category.startsWith(category)).map((product, index) => (
           <Item
             key={index}
             id={product.id}
-            name={product.name}
+            name={product.title.slice(0, 20)}
             img={product.image}
-            newPrice={product.new_price}
-            oldPrice={product.old_price}
+            newPrice={product.price.toFixed(2)}
           />
         ))}
-      </div>
-      <div className={styles.loadmore}>
-          Explore More
       </div>
     </section>
   )

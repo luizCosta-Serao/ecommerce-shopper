@@ -6,7 +6,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 
 const Navbar = () => {
-  const [menu, setMenu] = React.useState('shop')
   const [cartTotal, setCartTotal] = React.useState(1)
   const [menuMobile, setMenuMobile] = React.useState(false)
   const { pathname } = useLocation()
@@ -53,21 +52,25 @@ const Navbar = () => {
           <button className={styles.btnMenuMobile} onClick={() => setMenuMobile(!menuMobile)}></button>
           <nav>
             <ul className={menuMobile ? styles.navMenuMobile : styles.navMenu}>
-              <li onClick={() => setMenu('shop')}>
-                <Link to='/'>Shop</Link>
+              <li>
+                <Link to='/'>Home</Link>
                 {pathname ===  '/' ? <hr /> : <></>}
               </li>
-              <li onClick={() => setMenu('mens')}>
+              <li>
                 <Link to='mens'>Men</Link>
                 {pathname ===  '/mens' ? <hr /> : <></>}
               </li>
-              <li onClick={() => setMenu('womens')}>
+              <li>
                 <Link to='womens'>Women</Link>
                 {pathname ===  '/womens' ? <hr /> : <></>}
               </li>
-              <li onClick={() => setMenu('kids')}>
-                <Link to='kids'>Kids</Link>
-                {pathname ===  '/kids' ? <hr /> : <></>}
+              <li>
+                <Link to='jewelerys'>Jewelerys</Link>
+                {pathname ===  '/jewelerys' ? <hr /> : <></>}
+              </li>
+              <li>
+                <Link to='electronics'>Electronics</Link>
+                {pathname ===  '/electronics' ? <hr /> : <></>}
               </li>
             </ul>
           </nav>
