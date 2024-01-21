@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import styles from './ProductDisplay.module.css'
 import StarIcon from '../../assets/star_icon.png'
-import StarDullIcon from '../../assets/star_dull_icon.png'
 import { ShopContext } from '../../Context/ShopContext'
 
 const ProductDisplay = (props) => {
@@ -11,55 +10,39 @@ const ProductDisplay = (props) => {
   return (
     <section className={styles.productDisplay}>
       <div className={styles.displayLeft}>
-        <div className={styles.imgList}>
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-        </div>
-        <div className={styles.img}>
-          <img className={styles.mainImg} src={product.image} alt="" />
-        </div>
+        <ul className={styles.imgList}>
+          <li><img src={product.image} alt="" /></li>
+          <li><img src={product.image} alt="" /></li>
+          <li><img src={product.image} alt="" /></li>
+          <li><img src={product.image} alt="" /></li>
+        </ul>
+        <img className={styles.mainImg} src={product.image} alt="" />
       </div>
+
       <div className={styles.displayRight}>
-        <h1>{product.name}</h1>
+        <h1>{product.title}</h1>
         <div className={styles.star}>
           <img src={StarIcon} alt="star" />
-          <img src={StarIcon} alt="star" />
-          <img src={StarIcon} alt="star" />
-          <img src={StarIcon} alt="star" />
-          <img src={StarDullIcon} alt="star" />
-          <p>(122)</p>
+          <span>{product.rating.rate}</span>
+          <p>({product.rating.count})</p>
         </div>
-        <div className={styles.prices}>
-          <div className={styles.priceOld}>
-            ${product.old_price}
-          </div>
-          <div className={styles.priceNew}>
-            ${product.new_price}
-          </div>
-        </div>
-        <div className={styles.description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum iusto voluptatum numquam amet dolorum, voluptate quibusdam, velit voluptatem molestiae totam ducimus maxime ipsa dicta eos.
-        </div>
+        <p className={styles.price}>$ {product.price.toFixed(2)}</p>
+        <p className={styles.description}>
+          {product.description}
+        </p>
         <div className={styles.size}>
           <h1>Select Size</h1>
-          <div className={styles.sizes}>
-            <div>S</div>
-            <div>M</div>
-            <div>L</div>
-            <div>XL</div>
-            <div>XX</div>
-          </div>
+          <ul className={styles.sizes}>
+            <li>S</li>
+            <li>M</li>
+            <li>L</li>
+            <li>XL</li>
+            <li>XX</li>
+          </ul>
         </div>
         <button onClick={() => {addToCart(product.id)}} className={styles.buy}>Add To Cart</button>
         <p className={styles.category}>
-          <span>Category: </span>
-          Women, T-Sgirt, Crop Top
-        </p>
-        <p className={styles.category}>
-          <span>Tags: </span>
-          Modern, Latest
+          Category: {product.category}
         </p>
       </div>
     </section>

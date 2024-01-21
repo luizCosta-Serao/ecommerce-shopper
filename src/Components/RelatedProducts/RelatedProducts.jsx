@@ -4,19 +4,33 @@ import DataProduct from '../../assets/data'
 import Item from '../Item/Item'
 
 const RelatedProducts = () => {
+  const [products, setProducts] = React.useState(null)
+
+  React.useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products?limit=4')
+        const json = await response.json()
+        setProducts(json)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchProducts()
+  }, [])
+
   return (
     <section className={styles.relatedProducts}>
       <h1>Related Products</h1>
       <hr />
       <div className={styles.item}>
-        {DataProduct.map((product, index) => (
+        {products && products.map((product, index) => (
           <Item
             key={index}
             id={product.id}
-            name={product.name}
+            name={product.title.slice(0, 20)}
             img={product.image}
-            newPrice={product.new_price}
-            oldPrice={product.old_price}
+            newPrice={product.price.toFixed(2)}
           />
         ))}
       </div>

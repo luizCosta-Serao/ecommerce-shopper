@@ -19,7 +19,6 @@ const ShopCategory = ({ banner, category }) => {
     }
     fetchProducts()
   }, [])
-'s'.startsWith
 
   return (
     <section className={styles.ShopCategory}>

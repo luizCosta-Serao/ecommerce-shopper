@@ -8,7 +8,7 @@
 }
 
 .relatedProducts h1 {
-  color: #171717;
+  color: #333;
   font-size: 3rem;
   font-weight: 600;
 }
@@ -17,7 +17,7 @@
   width: 200px;
   height: 6px;
   border-radius: 10px;
-  background-color: #252525;
+  background-color: #333;
 }
 
 .item {
