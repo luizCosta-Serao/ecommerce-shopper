@@ -43,6 +43,11 @@
   font-weight: 500;
   margin-top: 2rem;
   cursor: pointer;
+  transition: .4s;
+}
+
+.offersLeft button:hover {
+  background-color: #ff4f4f;
 }
 
 .offersRight {
