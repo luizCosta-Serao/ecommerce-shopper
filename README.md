@@ -1,8 +1,8 @@
 <h1># Ecommerce Shopper</h1>
 
-<p>Bem-vindo ao Ecommerce Shopper!</p>
+<p>Bem-vindo ao Ecommerce Outfit/Pro!</p>
 
-<p>Este é um site de comércio eletrônico onde você pode encontrar uma ampla variedade de roupas de todos os estilos. Aqui você encontrará roupas femininas, masculinas e para crianças.</p>
+<p>plataforma de comércio eletrônico moderna e elegante que oferece uma experiência de compra perfeita. Este projeto está hospedado no Vercel e foi projetado para proporcionar aos usuários uma interface amigável para navegar e comprar uma variedade de produtos.</p>
 
 <h1>## Funcionalidades</h1>
 <ul>
