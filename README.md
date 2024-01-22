@@ -1,4 +1,4 @@
-<h1># Ecommerce Shopper</h1>
+<h1># Ecommerce Outfit/Pro</h1>
 
 <p>Bem-vindo ao Ecommerce Outfit/Pro!</p>
 
