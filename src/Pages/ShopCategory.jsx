@@ -29,7 +29,7 @@ const ShopCategory = ({ banner, category }) => {
         </div>
         <img className={styles.banner} src={banner} alt="" />
       </div>
-      <h1 className={styles.category}>{category}</h1>
+      <h1 className={styles.category}>{category}s</h1>
       <hr className={styles.categoryStyle} />
       <div className={styles.products}>
         {products && products.filter((product) => product.category.startsWith(category)).map((product, index) => (

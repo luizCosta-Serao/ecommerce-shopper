@@ -50,6 +50,11 @@
   font-size: 1.5rem;
   font-weight: 500;
   cursor: pointer;
+  transition: .4s;
+}
+
+.fields button:hover {
+  background-color: #ff4f4f;
 }
 
 .signupLogin {
@@ -63,6 +68,12 @@
   color: #ff4141;
   font-weight: 600;
   padding-left: .5rem;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.loginSignup span:hover {
+  color: #ff4f4f;
 }
 
 .signupAgree {

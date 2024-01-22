@@ -92,6 +92,11 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  transition: .4s;
+}
+
+.total button:hover {
+  background-color: #ff4f4f;
 }
 
 .promoCode {
@@ -130,10 +135,17 @@
   height: 58px;
   font-size: 1rem;
   background-color: #333;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 1rem;
   color: #fff;
   cursor: pointer;
+  transition: .4s;
+}
+
+.promoBox button:hover {
+  background-color: #fff;
+  color: #333;
+  border-color: #333;
 }
 
 @media (max-width: 1150px) {

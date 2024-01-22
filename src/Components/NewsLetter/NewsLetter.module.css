@@ -53,6 +53,14 @@
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
+  transition: .4s;
+  border: 2px solid transparent;
+}
+
+.newsLetter button:hover {
+  background-color: #fff;
+  color: #333;
+  border-color: #333;
 }
 
 @media (max-width: 876px) {
