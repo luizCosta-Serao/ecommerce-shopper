@@ -46,6 +46,11 @@
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 500;
+  transition: .4s;
+}
+
+.latestBtn:hover {
+  background-color: #ff4f4f;
 }
 
 .latestBtn img {
