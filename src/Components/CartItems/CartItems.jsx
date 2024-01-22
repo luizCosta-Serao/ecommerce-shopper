@@ -4,22 +4,36 @@ import { ShopContext } from '../../Context/ShopContext'
 import RemoveIcon from '../../assets/cart_cross_icon.png'
 
 const CartItems = () => {
-  const { AllProduct, cartItems, removeFromCart } = useContext(ShopContext)
+  const { cartItems, removeFromCart } = useContext(ShopContext)
   const [total, setTotal] = React.useState(0)
+  const [products, setProducts] = React.useState(null)
+
+  React.useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products')
+        const json = await response.json()
+        setProducts(json)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchProducts()
+  }, [])
 
   React.useEffect(() => {
     function getTotalAmount() {
-      let totalAmount = 0
+      let totalAmount = 0 
       for (const item in cartItems) {
-        if(cartItems[item] > 0) {
-          let itemInfo = AllProduct.find((product) => product.id === +item)
-          totalAmount += itemInfo.new_price * cartItems[item]
+        if(cartItems[item] > 0 && products) {
+          let itemInfo = products.find((product) => product.id === +item)
+          totalAmount += itemInfo.price * cartItems[item]
         }
       }
       return totalAmount
     }
     setTotal(getTotalAmount())
-  }, [AllProduct, cartItems])
+  }, [products, cartItems])
   
   return ( 
     <section className={styles.cartItems}>
@@ -32,7 +46,7 @@ const CartItems = () => {
         <p>Remove</p>
       </div>
       <hr />
-      {AllProduct.filter((product) => cartItems[product.id] > 0)
+      {products && products.filter((product) => cartItems[product.id] > 0)
         .map((product, index) => (
           <div key={index}>
             <div className={styles.format}>
@@ -42,13 +56,13 @@ const CartItems = () => {
                 className={styles.productIcon}
               />
               <p className={styles.productName}>
-                {product.name}
+                {product.title.slice(0, 20)}
               </p>
-              <p>${product.new_price}</p>
+              <p>${product.price}</p>
               <button className={styles.quantity}>
                 {cartItems[product.id]}
               </button>
-              <p className={styles.totalPrice}>${product.new_price * cartItems[product.id]}</p>
+              <p className={styles.totalPrice}>${product.price * cartItems[product.id]}</p>
               <img
                 onClick={() => {removeFromCart(product.id)}}
                 src={RemoveIcon}

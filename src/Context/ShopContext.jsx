@@ -1,20 +1,32 @@
 import React, { createContext } from 'react'
-import AllProduct from '../assets/all_product'
 
 export const ShopContext = createContext(null)
 
-const getDefaultCart = () => {
-  let cart = {};
-  for (let index = 0; index < AllProduct.length + 1; index++) {
-    cart[index] = 0
-    
-  }
-  return cart
-}
-
 const ShopContextProvider = ({ children }) => {
+  const [cartItems, setCartItems] = React.useState(null)
 
-  const [cartItems, setCartItems] = React.useState(getDefaultCart())
+  React.useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products')
+        const json = await response.json()
+        return json
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    
+    const getDefaultCart = async () => {
+      const products = await fetchProducts()
+      let cart = {};
+      for (let index = 0; index < products.length + 1; index++) {
+        cart[index] = 0
+        
+      }
+      setCartItems(cart)
+    }
+    getDefaultCart()
+  }, [])
 
   const addToCart = (itemId) => {
     setCartItems((prev) => (
@@ -29,7 +41,6 @@ const ShopContextProvider = ({ children }) => {
   }
 
   const contextValue = {
-    AllProduct,
     cartItems,
     addToCart,
     removeFromCart
