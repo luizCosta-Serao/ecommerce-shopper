@@ -3,10 +3,11 @@
   justify-content: space-around;
   align-items: center;
   margin: .05rem auto 5rem auto;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   max-width: 1200px;
   height: 400px;
   background-color: #333;
+  text-align: center;
 }
 
 .bannerContent h1 {
@@ -60,4 +61,10 @@
 .products section {
   max-width: 280px;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 876px) {
+  .bannerContainer img {
+    display: none;
+  }
 }
