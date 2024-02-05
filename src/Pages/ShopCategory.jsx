@@ -3,23 +3,30 @@ import styles from './ShopCategory.module.css'
 import { ShopContext } from '../Context/ShopContext'
 import DropdownIcon from '../assets/dropdown_icon.png'
 import Item from '../Components/Item/Item'
+import Loading from '../Components/Loading/Loading'
 
 const ShopCategory = ({ banner, category }) => {
   const [products, setProducts] = React.useState(null)
+  const [loading, setLoading] = React.useState(false)
 
   React.useEffect(() => {
     async function fetchProducts() {
       try {
+        setLoading(true)
         const response = await fetch('https://fakestoreapi.com/products')
         const json = await response.json()
         setProducts(json)
       } catch (error) {
         console.log(error)
+      } finally {
+        setLoading(false)
       }
     }
     fetchProducts()
   }, [])
 
+  if (loading) return <Loading />
+  if (!products) return null
   return (
     <section className={styles.ShopCategory}>
       <div className={styles.bannerContainer}>
