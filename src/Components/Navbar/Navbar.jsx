@@ -8,10 +8,28 @@ import { ShopContext } from '../../Context/ShopContext';
 const Navbar = () => {
   const [cartTotal, setCartTotal] = React.useState(1)
   const [menuMobile, setMenuMobile] = React.useState(false)
-  const [showmenu, setShowMenu] = React.useState(false)
   const { pathname } = useLocation()
 
   const { cartItems } = useContext(ShopContext)
+
+  React.useEffect(() => {
+    setMenuMobile(false)
+  }, [pathname])
+
+  React.useEffect(() => {
+    function authWidth() {
+      const media = window.matchMedia('(min-width: 876px)')
+      if (media.matches) {
+        setMenuMobile(false)
+      }
+    }
+
+    window.addEventListener('resize', authWidth)
+
+    return () => {
+      window.removeEventListener('resize', authWidth)
+    }
+  }, [])
 
   React.useEffect(() => {
     function getTotalCartItems() {

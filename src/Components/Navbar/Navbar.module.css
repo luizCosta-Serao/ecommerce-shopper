@@ -171,18 +171,22 @@
 
   .navMenuMobile {
     margin: 2.05rem .09rem 0 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #333;
     font-size: 1rem;
     font-weight: 500;
     position: absolute;
     top: 85px;
     background-color: #fff;
-    padding: 1rem 2.5rem;
-    right: .5px;
+    padding: 1rem 0;
+    right: 0;
     box-shadow: 0 0 2px #333;
     animation: animaMenu .5s forwards;
     border: 2px solid #333;
+    width: 99.2%;
   }
 
   .navMenuMobile li {
