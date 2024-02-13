@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
 import RelatedProducts from '../Components/RelatedProducts/RelatedProducts';
 import Loading from '../Components/Loading/Loading';
+import BuyAlert from '../Components/BuyAlert/BuyAlert';
 
 const Product = () => {
   const [products, setProducts] = React.useState(null)

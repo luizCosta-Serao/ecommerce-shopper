@@ -2,17 +2,25 @@ import React, { useContext } from 'react'
 import styles from './ProductDisplay.module.css'
 import StarIcon from '../../assets/star_icon.png'
 import { ShopContext } from '../../Context/ShopContext'
+import BuyAlert from '../BuyAlert/BuyAlert'
 
 const ProductDisplay = (props) => {
   const { product } = props
   const { addToCart } = useContext(ShopContext);
+  const [showAlert, setShowAlert] = React.useState(false)
+
+  function buyProduct() {
+    addToCart(product.id)
+    setShowAlert(true)
+    setTimeout(() => {
+      setShowAlert(false)
+    }, 2000)
+  }
 
   return (
     <section className={styles.productDisplay}>
       <div className={styles.displayLeft}>
         <ul className={styles.imgList}>
-          <li><img src={product.image} alt="" /></li>
-          <li><img src={product.image} alt="" /></li>
           <li><img src={product.image} alt="" /></li>
           <li><img src={product.image} alt="" /></li>
         </ul>
@@ -40,11 +48,12 @@ const ProductDisplay = (props) => {
             <li>XX</li>
           </ul>
         </div>
-        <button onClick={() => {addToCart(product.id)}} className={styles.buy}>Add To Cart</button>
+        <button onClick={buyProduct} className={styles.buy}>Add To Cart</button>
         <p className={styles.category}>
           Category: {product.category}
         </p>
       </div>
+      {showAlert && <BuyAlert nameProduct={product.title} />}
     </section>
   )
 }

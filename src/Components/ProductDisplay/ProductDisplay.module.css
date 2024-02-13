@@ -126,6 +126,11 @@
   border-radius: 1rem;
   outline: none;
   cursor: pointer;
+  transition: .3s;
+}
+
+.buy:hover {
+  background-color: #aa1010;
 }
 
 .category {
