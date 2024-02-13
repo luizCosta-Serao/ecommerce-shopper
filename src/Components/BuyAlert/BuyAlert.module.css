@@ -1,0 +1,26 @@
+.buyAlert {
+  color: green;
+  font-weight: 600;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border: 2px solid #333;
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10000;
+  animation: showAlert .5s forwards;
+}
+
+@keyframes showAlert {
+  from {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+  }
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
