@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Hero.module.css'
-import HandIcon from '../../assets/hand_icon.png'
 import ArrowIcon from '../../assets/arrow.png'
 import HeroImg from '../../assets/hero_image.png'
 import { useNavigate } from 'react-router-dom'
