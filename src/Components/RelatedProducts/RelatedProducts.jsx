@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './RelatedProducts.module.css'
-import DataProduct from '../../assets/data'
 import Item from '../Item/Item'
 
 const RelatedProducts = () => {

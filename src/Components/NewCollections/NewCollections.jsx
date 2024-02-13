@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './NewCollections.module.css'
-import newCollection from '../../assets/new_collections'
 import Item from '../Item/Item'
 import Loading from '../Loading/Loading'
 
